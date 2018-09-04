@@ -6,3 +6,7 @@ production:
   driver: postgres
   open: user=postgres dbname=postgres sslmode=disable password=password
 
+mysql_development:
+  driver: mysql
+  open: username:password@/sample?parseTime=true
+
