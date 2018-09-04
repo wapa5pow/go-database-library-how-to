@@ -17,7 +17,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	user := models.User{Name: "Ishida"}
-	conn.Create(&user)
-	conn.TX.Commit()
+	err = conn.Create(&user)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = conn.TX.Commit()
+	if err != nil {
+		log.Fatal(err)
+	}
 }

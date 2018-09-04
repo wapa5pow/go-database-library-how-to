@@ -14,5 +14,8 @@ func main() {
 	}
 
 	user := models.User{Name: "Ishida"}
-	conn.Create(&user)
+	err = conn.Create(&user)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
