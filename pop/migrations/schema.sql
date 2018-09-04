@@ -59,7 +59,8 @@ CREATE TABLE public.users (
     id integer NOT NULL,
     name text NOT NULL,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    email character varying(255) DEFAULT ''::character varying NOT NULL
 );
 
 
