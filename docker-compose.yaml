@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: sample
+    volumes:
+      - ./mysql_log.cnf:/etc/mysql/conf.d/mysql_log.cnf
+  postgres:
+    image: postgres:9.6
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=password"
+    volumes:
+      - ./postgres.conf:/etc/postgresql/postgresql.conf
